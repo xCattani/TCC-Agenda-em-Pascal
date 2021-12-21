@@ -1,0 +1,81 @@
+unit unitAgend;
+
+interface
+
+uses System.classes;
+
+ type
+  TAgendamento = class
+
+  private
+  Client      : String;
+  Phone       : String;
+  Date        : String;
+  Schedule    : String;
+
+  public
+  function getClient : String;
+  function getPhone  : String;
+  function getDate   : String;
+  function getSched  : String;
+
+  procedure setClient (FValor : String) ;
+  procedure setPhone  (FValor : String) ;
+  procedure setDate   (FValor : String) ;
+  procedure setSched  (FValor : String) ;
+
+ end;
+implementation
+
+
+
+{ TAgendamento }
+{$REGION 'GETs'}
+
+function TAgendamento.getClient: String;
+begin
+Client := fValor;
+end;
+
+function TAgendamento.getDate: String;
+begin
+
+end;
+
+function TAgendamento.getPhone: String;
+begin
+
+end;
+
+function TAgendamento.getSched: String;
+begin
+
+end;
+
+{$ENDREGION}
+
+{$REGION 'SETs'}
+
+procedure TAgendamento.setClient(FValor: String);
+begin
+
+end;
+
+procedure TAgendamento.setDate(FValor: String);
+begin
+
+end;
+
+procedure TAgendamento.setPhone(FValor: String);
+begin
+
+end;
+
+procedure TAgendamento.setSched(FValor: String);
+begin
+
+end;
+
+{$ENDREGION}
+
+end.

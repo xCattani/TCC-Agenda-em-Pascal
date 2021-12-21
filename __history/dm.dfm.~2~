@@ -1,0 +1,26 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 418
+  Width = 702
+  object fdConnect: TFDConnection
+    Params.Strings = (
+      'User_Name=root'
+      'Database=agenda'
+      'Server=localhost'
+      'DriverID=MySQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 32
+    Top = 24
+  end
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    VendorLib = 'C:\Users\catta\Documents\libmysql.dll'
+    Left = 128
+    Top = 32
+  end
+  object qrySelect: TFDQuery
+    Connection = fdConnect
+    Left = 24
+    Top = 184
+  end
+end

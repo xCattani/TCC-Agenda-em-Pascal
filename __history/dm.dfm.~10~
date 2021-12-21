@@ -1,0 +1,38 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 418
+  Width = 702
+  object fdConnect: TFDConnection
+    Params.Strings = (
+      'User_Name=root'
+      'Database=agenda'
+      'Server=localhost'
+      'DriverID=MySQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 32
+    Top = 24
+  end
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    VendorLib = 'C:\Programas\Embarcadero RAD Studio XE8\libmysql.dll'
+    Left = 128
+    Top = 32
+  end
+  object qrySelect: TFDQuery
+    Active = True
+    Connection = fdConnect
+    SQL.Strings = (
+      'use agenda;'
+      'select * from agendamento order by Data_Hora;')
+    Left = 72
+    Top = 152
+  end
+  object FDQuery1: TFDQuery
+    Connection = fdConnect
+    SQL.Strings = (
+      'select * from agendamento '
+      'Where Data_Hora < CURRENT_TIMESTAMP();')
+    Left = 336
+    Top = 136
+  end
+end

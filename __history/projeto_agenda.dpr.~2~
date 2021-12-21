@@ -1,0 +1,16 @@
+program projeto_agenda;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  tela_login in 'tela_login.pas' {form_login},
+  unitPrincipal in 'unitPrincipal.pas' {form_principal};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(Tform_login, form_login);
+  Application.CreateForm(Tform_principal, form_principal);
+  Application.Run;
+end.

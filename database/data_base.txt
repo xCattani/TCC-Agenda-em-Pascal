@@ -1,0 +1,69 @@
+CREATE DATABASE Agenda;
+
+use Agenda;
+
+create table Produto
+(id int auto_increment,
+Marca VARCHAR(20),
+Descrição VARCHAR(80),
+Preço DECIMAL(6,2),
+Categoria VARCHAR(80),
+Quantidade INTEGER,
+primary key (id)
+);
+
+CREATE TABLE Pacote 
+(ID INT auto_increment,
+Descricao VARCHAR(255),
+Valor DECIMAL(6,2),
+id_produto INT,
+PRIMARY KEY (ID),
+FOREIGN KEY (id_produto) REFERENCES Produto(id)
+);
+
+CREATE TABLE Servico
+(ID INT auto_increment,
+Descricao VARCHAR(255),
+Valor DECIMAL(6,2),
+PRIMARY KEY (ID)
+);
+
+CREATE TABLE Agendamento
+(ID INT auto_increment,
+Cliente VARCHAR(50),
+Telefone VARCHAR(11),
+Data_Hora DATETIME,
+id_produto INT,
+id_servico INT,
+PRIMARY KEY(ID),
+FOREIGN KEY (id_produto) REFERENCES Produto(ID),
+FOREIGN KEY (id_servico) REFERENCES Servico(ID)
+);
+
+CREATE TABLE Venda
+(ID INT auto_increment,
+Valor_total DECIMAL(6,2),
+id_pacote INT,
+id_produto INT,
+id_servico INT,
+PRIMARY KEY(ID),
+FOREIGN KEY (id_pacote) REFERENCES Pacote(ID),
+FOREIGN KEY (id_produto) REFERENCES Produto(ID),
+FOREIGN KEY (id_servico) REFERENCES Servico(ID)
+);
+
+
+UPDATE agendamento SET Data_Hora = :DATAHORA
+WHERE id = :ID;
+
+DataModule1.qryUpdate.ParamByName('ID').Value := id; 
+
+INSERT INTO agendamento (Cliente, Telefone, Data_Hora)
+  VALUES ('Maria', '3535564029', '2021-10-29 13:00:00' );
+INSERT INTO agendamento (Cliente, Telefone, Data_Hora)
+  VALUES ('Júlia', '3535564029', '2021-10-31 08:00:00' );
+INSERT INTO agendamento (Cliente, Telefone, Data_Hora)
+  VALUES ('Miya', '3535564029', '2021-11-10 15:00:00' );
+INSERT INTO agendamento (Cliente, Telefone, Data_Hora)
+  VALUES ('Luiza', '3535564029', '2021-11-05 19:00:00' );
+SELECT * FROM agendamento;

@@ -1,0 +1,18 @@
+unit unitAgend;
+
+interface
+
+ type
+  TAgendamento = class
+
+  private
+
+  Cliente   : String;
+  Telefone  : String;
+  Data      : String;
+  Horario   : String;
+
+ end;
+implementation
+
+end.

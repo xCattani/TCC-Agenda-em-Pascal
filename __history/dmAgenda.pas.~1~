@@ -1,0 +1,25 @@
+unit dmAgenda;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TdmAgendamento = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmAgendamento: TdmAgendamento;
+
+implementation
+
+{%CLASSGROUP 'FMX.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

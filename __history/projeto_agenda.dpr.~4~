@@ -1,0 +1,15 @@
+program projeto_agenda;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  unitLogin in 'unitLogin.pas' {formLogin},
+  unitPrincipal in 'unitPrincipal.pas' {formPrincipal};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TformLogin, formLogin);
+  Application.Run;
+end.

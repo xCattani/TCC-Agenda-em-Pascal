@@ -1,0 +1,73 @@
+unit tela_login;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.Edit, FMX.Objects, FMX.Layouts, FMX.StdCtrls,
+  FMX.TabControl, System.Actions, FMX.ActnList;
+
+type
+  Tform_login = class(TForm)
+    layout_tela_login: TLayout;
+    layout_icone: TLayout;
+    img_login: TImage;
+    layout_login: TLayout;
+    RoundRect_user_login: TRoundRect;
+    edit_user: TEdit;
+    RoundRect_senha_login: TRoundRect;
+    layout_user_login: TLayout;
+    layout_senha_login: TLayout;
+    edit_senha_login: TEdit;
+    layout_botao_login: TLayout;
+    RoundRect_botao_login: TRoundRect;
+    Label_botao_login: TLabel;
+    TabControl1: TTabControl;
+    tab_login: TTabItem;
+    tab_cad: TTabItem;
+    layout_user_cad: TLayout;
+    RoundRect1: TRoundRect;
+    Edit1: TEdit;
+    layout_cad: TLayout;
+    layout_email_cad: TLayout;
+    RoundRect2: TRoundRect;
+    edit_email_cad: TEdit;
+    layout_senha_cad: TLayout;
+    RoundRect3: TRoundRect;
+    Edit3: TEdit;
+    layout_img_cad: TLayout;
+    img_icone_cad: TImage;
+    layout_tela_cad: TLayout;
+    layout_cad_center: TLayout;
+    RoundRect4: TRoundRect;
+    label_botao_cad: TLabel;
+    StyleBook1: TStyleBook;
+    layoutTroca1: TLayout;
+    layoutBot: TLayout;
+    labelBotLogin: TLabel;
+    labelBotCad: TLabel;
+    ActionList1: TActionList;
+    ActConta: TChangeTabAction;
+    ActLogin: TChangeTabAction;
+    Line1: TLine;
+    procedure labelBotCadClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_login: Tform_login;
+
+implementation
+
+{$R *.fmx}
+
+procedure Tform_login.labelBotCadClick(Sender: TObject);
+begin
+tabControl1.ActiveTab := tab_cad;
+end;
+
+end.

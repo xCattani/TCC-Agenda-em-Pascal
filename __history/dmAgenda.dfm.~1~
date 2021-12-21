@@ -1,0 +1,5 @@
+object dmAgendamento: TdmAgendamento
+  OldCreateOrder = False
+  Height = 517
+  Width = 870
+end
